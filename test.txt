@@ -1,0 +1,16 @@
+"https://httpstat.us/301"
+http://seneca.ca
+https://www.google.com
+I am testing https://myweb.ca
+hi http://google.com
+https://www.gmail.com
+https://www.outlook.com
+http://www.abracadabra.com
+"http://0.0.0.0",
+"http://10.1.1.0",
+"http://10.1.1.255",
+"http://224.1.1.1",
+"http://1.1.1.1.1"
+"https://httpstat.us/404"
+http://abc.go.com/%
+https://httpstatuses.com/400
