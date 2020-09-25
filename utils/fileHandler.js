@@ -1,6 +1,6 @@
 const fs = require('fs');
 const axios = require('axios'); //using axios for fetching
-const colors = require('colors'); //using colors for optional req of colors
+const colors = require('colors'); //using colors for req of colors
 
 var urls = [];
 
