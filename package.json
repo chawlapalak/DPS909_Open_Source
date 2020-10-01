@@ -1,0 +1,24 @@
+{
+  "name": "url-inspector",
+  "version": "0.0.1",
+  "description": "This is to check different Url if they are working or not by using a command line tool.",
+  "preferGlobal": true,
+  "bin": {
+    "url-inspector" : "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chawlapalak/Url-Inspector.git"
+  },
+  "author": "Palak Chawla",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/chawlapalak/Url-Inspector/issues"
+  },
+  "homepage": "https://github.com/chawlapalak/Url-Inspector#readme",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "colors": "^1.4.0",
+    "commander": "^6.1.0"
+  }
+}
