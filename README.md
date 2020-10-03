@@ -1,7 +1,7 @@
 # URL-Inspector
 This is a command line interface tool to check different URLs and detect if they are good or bad or unknown.
 
-# Instalation
+# Installation
 npm i -g https://github.com/chawlapalak/Url-Inspector
 
 # Usage
@@ -18,7 +18,7 @@ npm i -g https://github.com/chawlapalak/Url-Inspector
     * Bad or Status 400 or 404 is displayed in red
     * Unknown status is displayed in gray
 * It displays the toolname along with its current version with the following command
-    url-inspector -v or -V or --versin
+    url-inspector -v or -V or --version
 * Network code is optimized to only request headers instead of full bodies
 * Additional support is available for timeouts
 
