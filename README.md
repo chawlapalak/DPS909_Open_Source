@@ -4,13 +4,25 @@ This is a command line interface tool to check different URLs and detect if they
 # Installation
 npm i -g https://github.com/chawlapalak/Url-Inspector
 
-# Features
+# Usage
+* Search and check URLS
+    url-inspector -f or --file filename
+* Help
+    url-inspector -h or --help
+* Version
+    url-inspector -v or -V or --version
 
-- You can check the different URLs by running this script if they are working or not : url-inspector -f test.txt
-- It will display "good" in green color, if the response status code is 200. In other words, it is working.
-- It will display "bad" in red color, if the response status code is 400 or 404. In other words, it is not working.
-- It will display "unknown" in grey color, if the response status code is any other code. In other words, it is unknown.
-- If you want to know the version, you can use any of these commands:  url-inspector -v, -V, --version.
+# Features
+* It displays URLS in the following colors
+    * Good or Status 200 is displayed in green
+    * Bad or Status 400 or 404 is displayed in red
+    * Unknown status is displayed in gray
+* It displays the toolname along with its current version with the following command
+    url-inspector -v or -V or --version
+* Network code is optimized to only request headers instead of full bodies
+* Additional support is available for timeouts
+
+
 
 
 
