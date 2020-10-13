@@ -2,15 +2,21 @@
 This is a command line interface tool to check different URLs and detect if they are good or bad or unknown.
 
 # Installation
-npm i -g https://github.com/chawlapalak/Url-Inspector
+npm i https://github.com/chawlapalak/Url-Inspector
 
 # Usage
-* Search and check URLS
-    url-inspector -f or --file filename
+* Search and check URLs
+    url-inspector -f or --file <filename>
 * Help
     url-inspector -h or --help
 * Version
     url-inspector -v or -V or --version
+* All URLs display
+    url-inspector --all
+* Good URLs display
+    url-inspector --good
+* Bad URLs display
+    url-inspector --bad
 
 # Features
 * It displays URLS in the following colors
@@ -21,6 +27,10 @@ npm i -g https://github.com/chawlapalak/Url-Inspector
     url-inspector -v or -V or --version
 * Network code is optimized to only request headers instead of full bodies
 * Additional support is available for timeouts
+* It displays URLs according to the flags specified
+    * All URLs are displayed when --all is specified
+    * Bad URLs are displayed when --bad is specified
+    * Good URLs are displayed when --good is specified
 
 
 
