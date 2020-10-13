@@ -1,15 +1,6 @@
-const result = require('dotenv').config();
 const fs = require('fs');
 const axios = require('axios'); //using axios for fetching
 const colors = require('colors'); //using colors for req of colors
-const cliColor = process.env.CLICOLOR || result.parsed.CLICOLOR ;         //using cliColor 
-
-if(cliColor === "0"){
-    colors.disable();
-}
-else{
-    colors.enable();
-}
 
 var urls = [];
 
