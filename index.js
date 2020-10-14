@@ -7,14 +7,25 @@ program
     .option('-f, --file <path>', 'Path to file')
     .option('--all', 'All URLs')
     .option('--good', 'Good URLs')
-    .option('--bad', 'Bad URLs');
+    .option('--bad', 'Bad URLs')
+    .option('-i, --ignore <path>', 'Path to file with URLs to ignore');
 
 program.parse(process.argv);
 
-if (program.file) {
-    console.log(`file: ${program.file}`);
-    const displayOption = program.bad ? 'bad' : ( program.good ? 'good' : 'all' );
-    fileHandler.readCheckFile(program.file, displayOption);
+if(program.ignore && !program.file)
+{
+    console.log('Error: Usage url-inspector -i <path> - f <filepath>');
 }
 
+
+if (program.file) {
+    console.log(`file: ${program.file}`);
+    const displayOption = program.bad ? 'bad' : ( program.good ? 'good' : 'all' );        
+    fileHandler.readCheckFile(program.file,program.ignore, displayOption);    
+    
+}
+
+process.on("exit", function (code) {
+    return console.log(`About to exit with code ${code}`);
+  });
 
