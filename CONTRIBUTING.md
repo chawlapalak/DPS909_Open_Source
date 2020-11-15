@@ -18,3 +18,10 @@ npm i https://github.com/chawlapalak/Url-Inspector
   url-inspector --bad
 - Ignore URLs option
   url-inspector -i <filename> -f <filename> or --ignore <filename> --file <filename>
+- Use ESLinter (Add on in VSCode as "Prettier - Code formatter")
+  npx eslint yourfile.js
+- Use Prettier (Add on in VSCode as "ESLint")
+  Check all files: npx prettier --check .
+  Check single file: npx prettier --check filename
+  Check and Update all files at once: npx prettier --write .
+  Check and Update one file at once: npx prettier --write filename
