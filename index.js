@@ -28,7 +28,7 @@ if (program.endpoint) {
   console.log(`endpoint: ${program.endpoint}`);
   restHandler
     .resFetch(program.endpoint)
-    .then((res) => {
+    .then(() => {
       fileHandler.readCheckFile("postsUrl.txt", undefined, "all");
     })
     .catch((err) => console.log(err));

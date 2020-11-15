@@ -87,7 +87,7 @@ const checkValid = (fileName) => {
     if (err) {
       console.log(err);
     } else {
-      invalid = data.match(/[\n][^(#|http|https)].+$/gm);
+      let invalid = data.match(/[\n][^(#|http|https)].+$/gm);
       if (invalid != null) {
         console.log(
           `${fileName} include invalid links. Links should start with http:// or https://`
