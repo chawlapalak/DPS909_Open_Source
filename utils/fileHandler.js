@@ -3,6 +3,9 @@ const fs = require("fs");
 const axios = require("axios"); //using axios for fetching
 const colors = require("colors"); //using colors for req of colors
 const cliColor = process.env.CLICOLOR || result.parsed.CLICOLOR; //using cliColor
+const URL_REGEX = require("./constant").URL_REGEX;
+const URL_INVALID = require("./constant").URL_INVALID;
+const URL_IGNORE = require("./constant").URL_IGNORE;
 
 if (cliColor === "0") {
   colors.disable();
@@ -24,7 +27,7 @@ const readCheckFile = (fileName, ignoreFile, displayOption) => {
     if (err) {
       console.log(err);
     } else {
-      urls = data.match(/(http|https)(:\/\/)([\w+\-&@`~#$%^*.=/?:]+)/gi);
+      urls = data.match(URL_REGEX);
 
       checkURL(urls, urlsIgnore, displayOption);
     }
@@ -33,8 +36,8 @@ const readCheckFile = (fileName, ignoreFile, displayOption) => {
 
 //this method will check the urls if they are working or not and then print the codes in assigned colors
 const checkURL = (urlList, ignoreUrlList, displayOption) => {
-  const showBad = displayOption === "all" || displayOption === "bad";
-  const showGood = displayOption === "all" || displayOption === "good";
+  const showBadUrl = displayOption === "all" || displayOption === "bad";
+  const showGoodUrl = displayOption === "all" || displayOption === "good";
   let urlListFinal = [];
 
   //if ignore urls list is not empty than push each url to the final list if the  url is not included in the ignore urls file
@@ -51,20 +54,20 @@ const checkURL = (urlList, ignoreUrlList, displayOption) => {
     await axios
       .head(url, { timeout: 1500 })
       .then((res) => {
-        if (res.status === 200 && showGood) {
+        if (res.status === 200 && showGoodUrl) {
           console.log(
             colors.green.bold(`GOOD , Status : ${res.status} ${url}`)
           );
-        } else if (showBad) {
+        } else if (showBadUrl) {
           console.log(
             colors.grey.bold(`UNKNOWN , Status : ${res.status} ${url}`)
           );
         }
       })
       .catch((err) => {
-        if (err.response === undefined && showBad) {
+        if (err.response === undefined && showBadUrl) {
           console.log(colors.grey.bold(`UNKNOWN , Status : UNKNOWN ${url}`));
-        } else if (showBad) {
+        } else if (showBadUrl) {
           if (err.response.status === 400 || err.response.status === 404) {
             console.log(
               colors.red.bold(`BAD , Status : ${err.response.status} ${url}`)
@@ -87,16 +90,14 @@ const checkValid = (fileName) => {
     if (err) {
       console.log(err);
     } else {
-      let invalid = data.match(/[\n][^(#|http|https)].+$/gm);
+      let invalid = data.match(URL_INVALID);
       if (invalid != null) {
         console.log(
           `${fileName} include invalid links. Links should start with http:// or https://`
         );
         process.exit(1);
       } else {
-        urlsIgnore = data.match(
-          /(http|https)(:\/\/)([\w+\-&@`~#$%^*.=/?:]+)/gi
-        );
+        urlsIgnore = data.match(URL_IGNORE);
         if (urlsIgnore != null) {
           console.log(`The following URLs will not be checked ${urlsIgnore}`);
         }

@@ -35,5 +35,5 @@ if (program.endpoint) {
 }
 
 process.on("exit", function (code) {
-  return console.log(`About to exit with code ${code}`);
+  return console.log(`Finished checking all the URLs with end code ${code}`);
 });
