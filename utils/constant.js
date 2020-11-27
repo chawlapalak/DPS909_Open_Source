@@ -5,5 +5,5 @@ const URL_IGNORE =  /(http|https)(:\/\/)([\w+\-&@`~#$%^*.=/?:]+)/gi;
 module.exports = {
     URL_REGEX,
     URL_IGNORE,
-    URL_INVALID
+    URL_INVALID,
 }
