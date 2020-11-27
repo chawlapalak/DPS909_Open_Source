@@ -26,5 +26,17 @@
     "eslint": "^7.13.0",
     "eslint-plugin-react": "^7.21.5",
     "prettier": "2.1.2"
+  },
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --collectCoverage --"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "*/.js",
+      "!*/node_modules/*",
+      "!**/*.txt"
+    ]
   }
 }
