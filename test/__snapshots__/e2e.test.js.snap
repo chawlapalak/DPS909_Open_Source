@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`end-to-end integration when argument --help is specified should print help message 1`] = `
+"Usage: index [options]
+
+Options:
+  -v, -V, --version     prints tool version
+  -f, --file <path>     Path to file
+  --all                 All URLs
+  --good                Good URLs
+  --bad                 Bad URLs
+  -i, --ignore <path>   Path to file with URLs to ignore
+  -e, --endpoint <url>  URL to fetch post list
+  -h, --help            display help for command"
+`;

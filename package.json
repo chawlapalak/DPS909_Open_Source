@@ -20,7 +20,8 @@
     "axios": "^0.20.0",
     "colors": "^1.4.0",
     "commander": "^6.1.0",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "execa": "^4.1.0"
   },
   "devDependencies": {
     "eslint": "^7.13.0",
