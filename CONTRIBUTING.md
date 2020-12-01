@@ -25,3 +25,9 @@ npm i https://github.com/chawlapalak/Url-Inspector
   Check single file: npx prettier --check filename
   Check and Update all files at once: npx prettier --write .
   Check and Update one file at once: npx prettier --write filename
+- Testing
+  Testing is done using Jest: https://jestjs.io/
+  Use this command to install Jest: npm install --save-dev jest
+  Run a single test file: npm run test moduleName.test.js
+  Run all tests: npm run test
+  Test coverage can be checked : npm run coverage or jest --coverage
