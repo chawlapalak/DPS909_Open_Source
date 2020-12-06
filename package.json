@@ -1,5 +1,5 @@
 {
-  "name": "url-inspector",
+  "name": "urls-inspector",
   "version": "1.0.0",
   "description": "This is to check different Url if they are working or not by using a command line tool.",
   "preferGlobal": true,
